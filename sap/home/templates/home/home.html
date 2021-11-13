@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>ISI pagina principal</title>    
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <ul>
+        <li>><a href="{%  url  'home' %}">home</a></li>
+        <li>><a href="{%  url  'sintactico:patrones' %}">sintactico</a></li>
+        <li>><a href="{%  url  'about:about' %}">about</a></li>
+      
+    </ul>  
+    {% block contenido %} 
+    <img src="https://picsum.photos/seed/picsum/200/300" alt="">
+    {% endblock contenido %}
+    {% for l in mislistas %} 
+      
+    
+
+    <ul>
+    <table style="border:5px" >
+        <thead>
+            <tr>
+            <td> Pk</td>
+            <td> T</td>
+            <td> C</td>
+            <td> I</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for elemento in l  %}
+            <tr>  
+                <td style="border:2px solid  red"><a href="">
+                {{elemento.pk}}
+                </a></td>
+                
+                {% if elemento.temperature > 50 %}
+                <td style="border:2px solid black">{{elemento.temperature}}</td>
+                {% else %}
+                <td style="border:2px solid yellow">{{elemento.temperature}}</td>
+                {% endif %}
+
+                <td style="border:2px solid blueviolet">{{elemento.color}}</td>
+                <td style="border:2px solid orangered">{{elemento.inflamation}}</td>
+            
+                {% endfor %}
+            </tr>
+           
+
+        </tbody>
+    </table>
+
+
+  
+    
+</ul>
+{% endfor %}
+
+</body>
+</html>
