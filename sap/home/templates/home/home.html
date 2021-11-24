@@ -62,7 +62,38 @@ body::-webkit-scrollbar-thumb {
     
     <button type="submit" name="miboton"></button>
   </form>
+  
+  <table style="border:5px" >
+    <thead>
+        <tr>
+        <td> Pk</td>
+        <td> T</td>
+        <td> C</td>
+        <td> I</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for elemento in l  %}
+        <tr>  
+            <td style="border:2px solid  red"><a href="">
+            {{elemento.pk}}
+            </a></td>
+            
+            {% if elemento.temperature > 50 %}
+            <td style="border:2px solid black">{{elemento.temperature}}</td>
+            {% else %}
+            <td style="border:2px solid yellow">{{elemento.temperature}}</td>
+            {% endif %}
 
+            <td style="border:2px solid blueviolet">{{elemento.color}}</td>
+            <td style="border:2px solid orangered">{{elemento.inflamation}}</td>
+        
+            {% endfor %}
+        </tr>
+
+
+    </tbody>
+</table>
 
 
   

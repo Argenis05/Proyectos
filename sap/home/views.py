@@ -9,6 +9,7 @@ def homee(request):
     milistas=[Lista,L1,L2]
     template_name="home/home.html"
     diccio= {'l':Lista,"otra":"informacion","Lista1":L1,"Lista2":L2,"mislistas":milistas,"distancia":distancias}
+    print(distancias)
     return render(request, template_name,diccio)
 
 def procesaLista(L):
@@ -46,10 +47,9 @@ def euclidea(tessiu):
             #f.append(round(math.dist(tejidosTotal[i],tejidosTotal[j] )))   
             dis=(math.dist(tejidosTotal[i],tejidosTotal[j] ))
                 
-            #mEuclidea.append(f)
             if dis>umbral:
-                print(i,j,"No",dis)
+                mEuclidea.append([i,j,dis,"No"])
             else:
-                print(i,j,"Si",dis)
+                mEuclidea.append([i,j,dis,"Si"])
 
     return (mEuclidea)
