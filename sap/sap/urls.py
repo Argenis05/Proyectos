@@ -25,5 +25,5 @@ urlpatterns = [
     path("",include('sintactico.urls') ),
     path("",include('about.urls') ),
     path("",include('home.urls') ),
-     
+    path("",include('grafo.urls') ),
 ]

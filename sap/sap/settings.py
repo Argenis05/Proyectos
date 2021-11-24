@@ -45,6 +45,7 @@ MISAPPS_INSALLED=[
     'home',
     'sintactico',
     'about',
+    'grafo',
 ]
 INSTALLED_APPS+=MISAPPS_INSALLED
 MIDDLEWARE = [

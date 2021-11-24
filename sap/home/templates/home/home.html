@@ -3,63 +3,71 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>ISI pagina principal</title>    
+    <title>About</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <script src='main.js'></script>
 </head>
-<body>
-    <ul>
-        <li>><a href="{%  url  'home' %}">home</a></li>
-        <li>><a href="{%  url  'sintactico:patrones' %}">sintactico</a></li>
-        <li>><a href="{%  url  'about:about' %}">about</a></li>
-      
-    </ul>  
-    {% block contenido %} 
-    <img src="https://picsum.photos/seed/picsum/200/300" alt="">
-    {% endblock contenido %}
-    {% for l in mislistas %} 
-      
+<style>
+    #mibarra{
+        margin: 10px;
+        padding:4px;
+        list-style: none;
+        text-transform: uppercase;
+        background-color:yellow;
+    }
+    #mibarra li {
+        display: inline;
+        margin: 0 80px;
+
+    }
     
 
-    <ul>
-    <table style="border:5px" >
-        <thead>
-            <tr>
-            <td> Pk</td>
-            <td> T</td>
-            <td> C</td>
-            <td> I</td>
-            </tr>
-        </thead>
-        <tbody>
-            {% for elemento in l  %}
-            <tr>  
-                <td style="border:2px solid  red"><a href="">
-                {{elemento.pk}}
-                </a></td>
-                
-                {% if elemento.temperature > 50 %}
-                <td style="border:2px solid black">{{elemento.temperature}}</td>
-                {% else %}
-                <td style="border:2px solid yellow">{{elemento.temperature}}</td>
-                {% endif %}
+ #foto1{
+    padding: 10px; margin: 10px; border: 2px solid black; float: right; width: 250px, ;
+ }
+ body { background-color: #E3D7D4; }
+ 
 
-                <td style="border:2px solid blueviolet">{{elemento.color}}</td>
-                <td style="border:2px solid orangered">{{elemento.inflamation}}</td>
-            
-                {% endfor %}
-            </tr>
-           
+body::-webkit-scrollbar {
+  width: 12px;               /* width of the entire scrollbar */
+}
 
-        </tbody>
-    </table>
+body::-webkit-scrollbar-track {
+  background: orange;        /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: blue;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 3px solid orange;  /* creates padding around scroll thumb */
+}
+
+</style>
+<ul id="mibarra">
+  <li><a href="{%  url  'grafo:grafo' %}">Home</a></li>
+  <li><a href="{%  url  'sintactico:patrones' %}">sintactico</a></li>
+  <li><a href="{%  url  'about:about' %}">about</a></li>
+  <li><a href="https://www.uaemex.mx/">Uaemex</a></li>   
+  </ul> 
+  
+  
+    {{distancia}}
+
+  <form action="{% url 'procesamiento' 5 %}" method="POST">
+      {%csrf_token%}
+
+      <label for="umbral">Umbral</label>
+      <input type="text" name="umbral" id="umbral">
+    
+    <button type="submit" name="miboton"></button>
+  </form>
+
 
 
   
     
-</ul>
-{% endfor %}
 
-</body>
+  
+    </body>
 </html>

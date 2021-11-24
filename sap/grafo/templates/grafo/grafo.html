@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>About</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<style>
+    #mibarra{
+        margin: 10px;
+        padding:4px;
+        list-style: none;
+        text-transform: uppercase;
+        background-color:yellow;
+    }
+    #mibarra li {
+        display: inline;
+        margin: 0 80px;
+    }
+    #box1 {
+    text-align: center;
+    width:150px;
+    margin:10px 50px;
+    padding:20px;
+    font-size:italic;
+    background-color:#cfc;
+    color:#000;
+}
+#sintomas {
+    
+    text-align: center;
+    width:250px;
+    margin:10px 50px;
+    padding:20px;
+    font-size:italic;
+    background-color:#cfc;
+    color:#000;
+    float: right
+    
+}
+ #foto1{
+    padding: 10px; margin: 10px; border: 2px solid black; float: right; width: 250px, ;
+ }
+ body { background-color: #E3D7D4; }
+ 
+
+body::-webkit-scrollbar {
+  width: 12px;               /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: orange;        /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: blue;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 3px solid orange;  /* creates padding around scroll thumb */
+}
+
+</style>
+<body>
+  
+    <ul id="mibarra">
+    <li><a href="{%  url  'home' %}">Grafo</a></li>
+    <li><a href="{%  url  'sintactico:patrones' %}">sintactico</a></li>
+    <li><a href="{%  url  'about:about' %}">about</a></li>
+    <li><a href="https://www.uaemex.mx/">Uaemex</a></li>   
+    </ul> 
+    <div style="position:absolute; top:80; left:0;">
+    <ul>
+  
+    <p id="box1">El cáncer se refiere a cualquiera de un gran número de enfermedades que se caracterizan por el desarrollo de células anormales que se dividen sin control y tienen la capacidad de infiltrarse y destruir el tejido corporal normal. A menudo, el cáncer tiene la capacidad de propagarse por el cuerpo.
+        El cáncer es la segunda causa principal de muerte en el mundo. Sin embargo, las tasas de supervivencia están aumentando en muchos tipos de cáncer, gracias a los avances en las pruebas para su detección, los tratamientos y la prevención</p>
+    
+    </ul>
+</div>
+
+    <ul id="sintomas">
+    <p >Síntomas</p>
+    <p>-Fatiga</p>
+    <p>-Bulto o zona de engrosamiento que puede palparse debajo de la piel</p>
+    <p>-Cambios de peso, como aumentos o pérdidas de peso no intencionales</p>
+    <p>-Cambios en la piel, como pigmentación amarillenta, oscurecimiento o enrojecimiento de la piel, llagas que no se curan o cambios en los lunares existentes</p>
+    <p>-Cambios en los hábitos de evacuación de la vejiga o los intestinos</p>
+    <p>-Tos persistente o dificultad para respirar</p>
+    <img class="foto1" src="https://picsum.photos/id/237/200/300" alt="imagen 1">
+  </ul>
+  
+
+  
+    </body>
+</html>
