@@ -42,8 +42,19 @@ body::-webkit-scrollbar-thumb {
   border-radius: 20px;       /* roundness of the scroll thumb */
   border: 3px solid orange;  /* creates padding around scroll thumb */
 }
+table {
+   border-collapse: separate;
+   border-spacing: 5px;
+   background: rgb(12, 55, 45) url("gradient.gif") bottom left repeat-x;
+   color: rgb(0, 54, 104);
+}
+td, th {
+   background: rgb(240, 207, 207);
+   color: #000;
+}
 
 </style>
+
 <ul id="mibarra">
   <li><a href="{%  url  'grafo:grafo' %}">Home</a></li>
   <li><a href="{%  url  'sintactico:patrones' %}">sintactico</a></li>
@@ -52,42 +63,30 @@ body::-webkit-scrollbar-thumb {
   </ul> 
   
   
-    {{distancia}}
+   
 
-  <form action="{% url 'procesamiento' 5 %}" method="POST">
-      {%csrf_token%}
+  <form action="{% url 'home' %}" method="POST">
+    {%csrf_token%}
 
-      <label for="umbral">Umbral</label>
-      <input type="text" name="umbral" id="umbral">
-    
-    <button type="submit" name="miboton"></button>
-  </form>
+    <label for="umbral">Umbral</label>
+    <input type="text" name="umbral" id="umbral">
   
-  <table style="border:5px" >
+  <button type="submit" name="miboton">ACEPTAR</button>
+</form>
+  
+  <table id="table" >
     <thead>
         <tr>
-        <td> Pk</td>
-        <td> T</td>
-        <td> C</td>
-        <td> I</td>
+        <td> Registro1--Registro2----Distancia----Si o No</td>
+          
         </tr>
     </thead>
     <tbody>
-        {% for elemento in l  %}
-        <tr>  
-            <td style="border:2px solid  red"><a href="">
-            {{elemento.pk}}
-            </a></td>
+        {% for elemento in distancia  %}
+        <tr >  
+           
+            <td>{{elemento}}</td>
             
-            {% if elemento.temperature > 50 %}
-            <td style="border:2px solid black">{{elemento.temperature}}</td>
-            {% else %}
-            <td style="border:2px solid yellow">{{elemento.temperature}}</td>
-            {% endif %}
-
-            <td style="border:2px solid blueviolet">{{elemento.color}}</td>
-            <td style="border:2px solid orangered">{{elemento.inflamation}}</td>
-        
             {% endfor %}
         </tr>
 

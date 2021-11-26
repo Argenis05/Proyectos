@@ -8,12 +8,34 @@
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <script src='main.js'></script>
 </head>
-<p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum dicta vero quisquam aut porro minima, tempora atque modi quibusdam incidunt assumenda sapiente eaque natus accusantium nemo similique. Deserunt, cupiditate quia.</p>
+<style>
+       #mibarra{
+        margin: 10px;
+        padding:4px;
+        list-style: none;
+        text-transform: uppercase;
+        background-color:rgb(189, 205, 216);
+    }
+    #mibarra li {
+        display: inline;
+        margin: 0 80px;
+
+    }
+    body { background-color: #e9c3d9; }
+</style>
 <body>
+    <ul id="mibarra">
+        <li><a href="{%  url  'grafo:grafo' %}">Home</a></li>
+        <li><a href="{%  url  'sintactico:patrones' %}">sintactico</a></li>
+        <li><a href="{%  url  'about:about' %}">about</a></li>
+        <li><a href="https://www.uaemex.mx/">Uaemex</a></li>   
+        </ul> 
 
 
-    <h1>Bievenido a mi acerca de </h1>
-    <h2>Mi nombre de usuario  es :{{nombreusuario}}</h2>
-    <h2>Mi edad es :{{edad}}</h2>
+    <div>
+        <h1>Pagina realizada por :</h1>
+        <h3>Estrada Ramirez David Alfredo</h3>
+        <h3>Lopez Montaño Argenis Gabriel </h3>
+    </div>
 </body>
 </html>

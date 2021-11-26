@@ -1,9 +1,9 @@
 from django.urls import path, re_path
-from .views import homee, procesamiento
+from .views import homee
 
 
 
 urlpatterns = [
     path("miempresa/",homee, name="home"),
-    path('procesamiento/<str:pk>/',procesamiento,name='procesamiento')
+    #path('procesamiento/',procesamiento,name='procesamiento')
 ]

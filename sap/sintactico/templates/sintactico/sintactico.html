@@ -1,5 +1,43 @@
-{% extends 'home/home.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>About</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<style>
+       #mibarra{
+        margin: 10px;
+        padding:4px;
+        list-style: none;
+        text-transform: uppercase;
+        background-color:rgb(189, 205, 216);
+    }
+    #mibarra li {
+        display: inline;
+        margin: 0 80px;
 
-{% block contenido %}
-    <h1>Reconocieminto de patrones sintacticos Estructural :Deteccion de cancer de mama</h1>
-{% endblock contenido %}
+    }
+    body { background-color: #e9c3d9; }
+</style>
+<body>
+    <ul id="mibarra">
+        <li><a href="{%  url  'grafo:grafo' %}">Home</a></li>
+        <li><a href="{%  url  'sintactico:patrones' %}">sintactico</a></li>
+        <li><a href="{%  url  'about:about' %}">about</a></li>
+        <li><a href="https://www.uaemex.mx/">Uaemex</a></li>   
+        </ul> 
+
+
+    <div>
+        <h1>El patrón sintáctico más usado en la recuperación de la información es el llamado part-of-speech (POS) de una palabra, es decir, las partes del habla que son: sustantivo, verbo, artículo, adjetivo, etc.
+ 
+
+            En la recuperación de información se realiza un marcaje de "POS" cuando se asignan estas categorías gramaticales a cada palabra dada, es decir, cuando se indica la función de cada palabra en el contexto específico de la oración. Este marcaje se hace considerando características morfológicas y sintácticas del lenguaje, esto es importante ya que los nombres generalmente designan personas, lugares, cosas, y otros conceptos físicos y abstractos, los verbos suelen utilizarse para designar acciones y procesos y los adjetivos describen propiedades y estados de los nombres.</h1>
+       
+    </div>
+</body>
+</html>
